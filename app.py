@@ -80,12 +80,17 @@ def chat():
         model = genai.GenerativeModel(
             model_name=model_name,
             generation_config=generation_config,
-            safety_settings=safety_settings,
-            system_instruction=system_prompt
+            safety_settings=safety_settings
         )
         
         # Crea la conversazione con la cronologia della chat
         chat = model.start_chat(history=chat_history)
+        
+        # Imposta il prompt di sistema come primo messaggio se la chat è vuota
+        if not chat_history:
+            # Invia il prompt di sistema come messaggio iniziale
+            system_message = chat.send_message(system_prompt)
+            # Non aggiungere questo alla cronologia visibile
         
         # Invia il messaggio dell'utente
         response = chat.send_message(user_message)
