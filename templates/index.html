@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gemini Chat</title>
     <style>
         :root {
@@ -352,10 +352,10 @@
         
         .message-input {
             flex: 1;
-            padding: 12px 15px;
+            padding: 14px 18px;
             border-radius: var(--border-radius);
             border: 1px solid var(--border-color);
-            font-size: 14px;
+            font-size: 16px;
             resize: none;
             outline: none;
             transition: all 0.2s ease;
@@ -373,18 +373,23 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
         .send-button:hover {
+            background-color: #0062cc;
             transform: scale(1.05);
-            box-shadow: 0 2px 10px rgba(0, 122, 255, 0.3);
+        }
+        
+        .send-button:active {
+            transform: scale(0.95);
         }
         
         /* Responsive Design */
@@ -418,7 +423,7 @@
             
             .chat-container {
                 flex: 1;
-                padding-bottom: 80px; /* Spazio per la barra di input */
+                padding-bottom: 90px; /* Spazio aumentato per la barra di input */
             }
             
             .input-container {
@@ -426,10 +431,25 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background-color: rgba(255, 255, 255, 0.95);
-                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+                padding: 15px 15px 25px 15px; /* Padding inferiore aumentato */
                 z-index: 100;
+            }
+            
+            .message-input-container {
+                gap: 15px; /* Aumentato lo spazio tra input e pulsante */
+            }
+            
+            .message-input {
+                font-size: 16px; /* Dimensione font ottimale per mobile */
+                -webkit-appearance: none; /* Previene lo stile predefinito su iOS */
+                appearance: none;
+            }
+            
+            .send-button {
+                width: 52px; /* Pulsante leggermente più grande su mobile */
+                height: 52px;
             }
             
             .message {
