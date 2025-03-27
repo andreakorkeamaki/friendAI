@@ -439,8 +439,8 @@
         
         <div class="chat-container" id="chat-container">
             <div class="chat-header">
-                <h1>Chat con Marco</h1>
-                <p>Il tuo amico che ti supporta</p>
+                <h1>Chat con un Fan di Aissela</h1>
+                <p>Parliamo della cantante siciliana e del suo nuovo EP</p>
             </div>
             <!-- I messaggi appariranno qui -->
         </div>
@@ -506,7 +506,7 @@
                 loadChat(newChatId);
                 
                 // Aggiungi un messaggio di benvenuto
-                addMessage('Ciao! Sono Marco. Come posso aiutarti oggi?', false);
+                addMessage('Ciao! Sono un grande fan di Aissela! Vuoi parlare della sua musica?', false);
             }
             
             // Renderizza la cronologia delle chat nella sidebar
@@ -551,7 +551,7 @@
                 chatContainer.innerHTML = '';
                 const chatHeader = document.createElement('div');
                 chatHeader.className = 'chat-header';
-                chatHeader.innerHTML = '<h1>Chat con Marco</h1><p>Il tuo amico che ti supporta</p>';
+                chatHeader.innerHTML = '<h1>Chat con un Fan di Aissela</h1><p>Parliamo della cantante siciliana e del suo nuovo EP</p>';
                 chatContainer.appendChild(chatHeader);
                 currentChat.messages.forEach(msg => {
                     addMessageToUI(msg.content, msg.isUser);
